@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Google</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/style.css">
+</head>
+
+
+<body>
+    <div class="navBar">
+        <div style="">
+            <a class="logo" href="@Url.RouteUrl("Home")"><img class="logoImage" height="40" src="https://i.hizliresim.com/zj10mY.png" />
+                                                         <p class="logoText">BATUHAN ŞAHAN</p></a>
+        </div>
+        <div class="menuItems">
+            <a class="@(ViewBag.Current == "Home" ? "menuLink active" : "menuLink")" href="@Url.RouteUrl("Home")">Home</a>
+            &nbsp
+            <a class="@(ViewBag.Current == "Portfolio" ? "menuLink active" : "menuLink")"  href="@Url.RouteUrl("Portfolio")">Portfolio</a>
+            &nbsp
+            <a class="@(ViewBag.Current == "Contact" ? "menuLink active" : "menuLink")"  href="@Url.RouteUrl("Contact")">Contact</a>
+            &nbsp
+            <a class="@(ViewBag.Current == "Login" ? "menuLink active" : "menuLink")"  href="@Url.RouteUrl("Login")">Login</a>
+        </div>
+    </div>
+    <br />
+    
+    <div class="container">
+    @RenderBody()
+    </div>
+    <br />
+    <footer class="footer">
+        &copy; Copyright @DateTime.UtcNow.Year - Batuhan Şahan
+    </footer>
+</body>
+</html>
